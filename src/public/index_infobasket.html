@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="original-trial" content=AhRSNW+2zbXlDahhAcj194oqlgDxj3TqG4sYwhsUdqldtNbZagboEjqIJZuUvBsIjtij4VSW0YvP5tGSpVgu6wgAAABzeyJvcmlnaW4iOiJodHRwczovL2dnYy53b3JsZDo0NDMiLCJmZWF0dXJlIjoiVW5yZXN0cmljdGVkU2hhcmVkQXJyYXlCdWZmZXIiLCJleHBpcnkiOjE2MzM0NzgzOTksImlzU3ViZG9tYWluIjp0cnVlfQ==>
+    <title>First Window</title>
+  </head>
+
+  <style>
+      #drag-file {
+        background-color: #1e1e1e;
+        color:white;
+        text-align: center;
+        width:300px;
+        height:300px;
+        border: 2px solid #f8f8ff;
+      }
+  </style>
+
+  <body>
+    <div id="app"></div>
+    <div id="drag-file" position: relative; top: 1000 px; z-index: -1>Drop files here-index.html</div>
+
+    <script type="javascript" defer src="./app/index.js"></script>
+    <script>
+        // https://ourcodeworld.com/articles/read/288/how-to-handle-drag-and-drop-file-feature-in-electron-framework
+        (function () {
+            var holder = document.getElementById('drag-file');
+            holder.ondragover = () => {
+                return false;
+            };
+            holder.ondragleave = () => {
+                return false;
+            };
+            holder.ondragend = () => {
+                return false;
+            };
+            holder.ondrop = (e) => {
+                e.preventDefault();
+                for (let f of e.dataTransfer.files) {
+                    console.log('File(s) you dragged here: ', f.path)
+                }
+                return false;
+            };
+        })();
+    </script>
+
+  </body>
+</html>
