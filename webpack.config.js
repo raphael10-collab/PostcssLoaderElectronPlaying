@@ -52,6 +52,7 @@ var main_config = {
 
         {
           test: /\.pcss$/,
+          type: 'asset',
           use: [
               { // https://github.com/webpack-contrib/postcss-loader#getting-started
                   loader: 'postcss-loader',
@@ -155,7 +156,13 @@ var renderer_config =  {
         {
           test: /\.pcss$/,
           use: [
-              { // https://github.com/webpack-contrib/postcss-loader#getting-started
+            {
+              loader: 'style-loader'
+            },
+            {
+              loader: 'css-loader'
+            },
+            { // https://github.com/webpack-contrib/postcss-loader#getting-started
                   loader: 'postcss-loader',
                   options: {
                       //config: {
@@ -168,7 +175,7 @@ var renderer_config =  {
                       },
                       //sourceMap: true,
                   },
-              },
+            },
           ],
         },
 

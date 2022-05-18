@@ -68,7 +68,7 @@
     "copy-webpack-plugin": "^7.0.0",
     "core-js": "^3.8.3",
     "cross-env": "^7.0.3",
-    "css-loader": "^5.1.1",
+    "css-loader": "^6.7.1",
     "css-minimizer-webpack-plugin": "^1.2.0",
     "electron": "16",
     "electron-builder": "^22.11.7",
@@ -124,6 +124,7 @@
     "@reduxjs/toolkit": "^1.5.1",
     "@types/is-url": "^1.2.30",
     "@types/jest": "^27.0.2",
+    "@types/postcss-import": "^14.0.0",
     "and": "^0.0.3",
     "argparse": "^2.0.1",
     "async": "^3.2.0",
@@ -140,6 +141,7 @@
     "node-gyp": "^8.0.0",
     "nodemon": "^2.0.13",
     "npm": "^8.4.1",
+    "postcss-preset-env": "^7.5.0",
     "react": "18",
     "react-bootstrap": "^1.5.2",
     "react-dom": "18",
@@ -164,15 +166,15 @@
     "yarn": "^1.22.10"
   },
   "rules": {
-      "at-rule-no-unknown": [
-        true,
-        {
-          "ignoreAtRules": [
-            "extends",
-            "tailwind"
-          ]
-        }
-      ]
+    "at-rule-no-unknown": [
+      true,
+      {
+        "ignoreAtRules": [
+          "extends",
+          "tailwind"
+        ]
+      }
+    ]
   },
   "browserslist": [
     "last 2 Chrome versions"
